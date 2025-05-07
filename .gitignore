@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+
+# drawio
+技能树.drawio.png
+
+# dependencies
+node_modules
+
+# editor settings
+.vscode
+
+# build output
+dist
+
+# log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env
+.env.*.local
+
+# IDE
+.idea
