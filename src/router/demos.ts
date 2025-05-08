@@ -12,7 +12,7 @@ const demoRoutes = Object.keys(demoModules).map((path) => {
     .replace(/\/([a-z])/g, (match, p1) => `/${p1.toUpperCase()}`) // 保证每个路径的首字母大写
 
   return {
-    path: routePath,
+    path: '/components'+routePath,
     name: name, // 路由名称为组件的目录名称
     component: demoModules[path], // 动态导入组件
   }

@@ -1,11 +1,11 @@
 <template>
     <nav class="menu-container">
-        <a v-for="(item,index) in items" :key="index" :href="item.link" :class="{selected:isSelected(item)}">
+        <RouterLink v-for="(item,index) in items" :key="index" :to="item.link" active-class="selected" exact-active-class="">
             <div class="icon">
                 <Icon :type="item.icon"></Icon>
             </div>
             <span>{{ item.title }}</span>
-        </a>
+        </RouterLink>
     </nav>
 </template>
 
@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-    @import '@/styles/var.less';
+    @import "@/styles/var.less";
     .menu-container {
         color: @gray;
         margin: 24px 0;

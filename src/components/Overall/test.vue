@@ -1,32 +1,33 @@
 <template>
-    <div class="app-container">
+    <div class="test-container">
         <Layout>
             <template #left>
                 <div class="aside">
-                    <SiteAside />
+                    <SiteAside></SiteAside>
                 </div>
             </template>
             <template #default>
-                <RouterView />
+                中间主区域
             </template>
         </Layout>
     </div>
 </template>
-  
-  <script>
-import Layout from "./components/Layout/index.vue";
-import SiteAside from "./components/SiteAside/index.vue";
+
+<script>
+import Layout from '@/components/Layout/index.vue'
+import SiteAside from '@/components/SiteAside/index.vue'
 export default {
+    name: 'OverallTest',
     components: {
         Layout,
-        SiteAside,
-    },
-};
-  </script>
-  
-  <style lang="less" scoped>
+        SiteAside
+    }
+}
+</script>
+
+<style scoped lang="less">
     @import "@/styles/mixin.less";
-    .app-container {
+    .test-container {
         .self-fill(fixed);
     }
     .aside {
@@ -34,5 +35,3 @@ export default {
         height: 100%;
     }
 </style>
-  
-  
