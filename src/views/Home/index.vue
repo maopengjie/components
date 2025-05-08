@@ -1,20 +1,35 @@
-<!--
- * @Author: maopengjie 113440530+maopengjie@users.noreply.github.com
- * @Date: 2025-05-07 15:44:27
- * @LastEditors: maopengjie 113440530+maopengjie@users.noreply.github.com
- * @LastEditTime: 2025-05-07 15:44:39
- * @FilePath: /components/src/views/Home/index.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
 <template>
-    <div>首页</div>
+    <div class="home-container" ref="container">
+        <h1>首页</h1>
+        <button @click="handleClick">点击弹框</button>
+    </div>
 </template>
 
 <script>
 export default {
-
+    methods: {
+        handleClick () {
+            console.log(this.$refs.container, 'container');
+            this.$showMessage({
+                content: 'Hello, this is a message!',
+                type: 'success',
+                duration: 3000,
+                container: this.$refs.container,
+                callback: function () {
+                    console.log('弹框关闭了');
+                }
+            });
+        }
+    }
 }
 </script>
 
-<style>
+<style scoped>
+    .home-container {
+        background: lightblue;
+        width: 300px;
+        height: 500px;
+        border: 1px solid;
+        margin: 50px auto;
+    }
 </style>
