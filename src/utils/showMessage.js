@@ -1,3 +1,11 @@
+/*
+ * @Author: maopengjie 113440530+maopengjie@users.noreply.github.com
+ * @Date: 2025-05-08 10:46:13
+ * @LastEditors: maopengjie 113440530+maopengjie@users.noreply.github.com
+ * @LastEditTime: 2025-05-14 18:46:54
+ * @FilePath: /components/src/utils/showMessage.js
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import getComponentRootDom from "./getComponentRootDom";
 import Icon from "@/components/Icon/index.vue";
 import styles from "./showMessage.module.less";
@@ -23,9 +31,8 @@ export default function (options = {}) {
   });
   div.innerHTML = `<span class="${styles.icon}">${iconDom.outerHTML}</span><div>${content}</div>`;
   div.className = `${styles.message} ${styles[`message-${type}`]}`;
-  if (!container) {
-    container = document.body;
-  } else {
+  // 容器的position是否改动过
+  if (options.container) {
     if (getComputedStyle(container).position === "static") {
       container.style.position = "relative";
     }

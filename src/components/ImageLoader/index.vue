@@ -1,3 +1,11 @@
+<!--
+ * @Author: maopengjie 113440530+maopengjie@users.noreply.github.com
+ * @Date: 2025-05-06 13:49:27
+ * @LastEditors: maopengjie 113440530+maopengjie@users.noreply.github.com
+ * @LastEditTime: 2025-05-20 16:42:41
+ * @FilePath: /components/src/components/ImageLoader/index.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
     <div class="image-loader-container">
         <img v-if="!everythingDone" class="placeholder" :src="placeholder" alt="">
@@ -46,7 +54,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-    @import '@/styles/mixin.less';
+    @import "@/styles/mixin.less";
     .image-loader-container {
         width: 100%;
         height: 100%;
