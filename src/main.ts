@@ -2,7 +2,7 @@
  * @Author: maopengjie 113440530+maopengjie@users.noreply.github.com
  * @Date: 2025-05-05 17:14:49
  * @LastEditors: maopengjie 113440530+maopengjie@users.noreply.github.com
- * @LastEditTime: 2025-05-23 10:38:36
+ * @LastEditTime: 2025-06-06 10:19:56
  * @FilePath: /components/src/main.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -13,6 +13,7 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import bus from './eventBus.js'
 
 
 const app = createApp(App)
@@ -23,6 +24,7 @@ import vLoading from './directives/loading.js'
 app.directive("loading",vLoading)
 
 app.config.globalProperties.$showMessage = showMessage
+app.config.globalProperties.$bus = bus
 window.$showMessage = showMessage
 import './mock/index.js' // 引入 mock 数据
 // import './api/banner.js' // 引入 api 数据
