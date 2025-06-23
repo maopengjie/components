@@ -1,12 +1,10 @@
 <template>
-    <div>留言</div>
+  <h1>留言板</h1>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-</style>
+<style></style>
+

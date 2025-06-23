@@ -1,8 +1,10 @@
 import loadingUrl from "@/assets/loading.svg";
 import styles from "./loading.module.less";
-function getLoadingImg() {
-  return document.querySelector("[data-role=loading");
+// 得到el中loading效果的img元素
+function getLoadingImage(el) {
+  return el.querySelector("img[data-role=loading]");
 }
+
 function createLoadingImg() {
   const img = document.createElement("img");
   img.dataset.role = "loading";
@@ -10,8 +12,11 @@ function createLoadingImg() {
   img.className = styles.loading;
   return img;
 }
-export default function (el, binding) {
-  const curImg = getLoadingImg();
+
+// 导出指令的配置对象
+export default function(el, binding) {
+  // 根据 binding.value 的值，决定创建或删除img元素
+  const curImg = getLoadingImage(el);
   if (binding.value) {
     if (!curImg) {
       const img = createLoadingImg();
@@ -23,3 +28,4 @@ export default function (el, binding) {
     }
   }
 }
+

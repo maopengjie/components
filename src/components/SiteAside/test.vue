@@ -1,24 +1,25 @@
 <template>
-    <div class="test-container">
-        <SiteAside></SiteAside>
-    </div>
+  <div class="test-container">
+    <SiteAside />
+  </div>
 </template>
 
 <script>
-import SiteAside from './index.vue'
+import SiteAside from "./";
+import "@/styles/global.less";
 export default {
-    name: 'SiteAsideTest',
-    components: {
-        SiteAside
-    },
-}
+  components: {
+    SiteAside,
+  },
+};
 </script>
 
-<style scoped>
-    .test-container {
-        width: 250px;
-        height: 600px;
-        border: 2px solid;
-        margin: 0 auto;
-    }
+<style>
+.test-container {
+  width: 250px;
+  height: 600px;
+  border: 2px solid;
+  margin: 0 auto;
+}
 </style>
+
